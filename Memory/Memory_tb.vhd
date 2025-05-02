@@ -8,7 +8,7 @@ end entity;
 architecture sim of Memory_tb is 
 	signal clk: std_logic := '1';
     signal address: std_logic_vector(31 downto 0) := x"0000_0000";   
-    signal dataIn : std_logic_vector(31 downto 0) := x"0000_0001";
+    signal dataIn : std_logic_vector(31 downto 0) := x"0000_0000";
     signal MemWrite : std_logic := '1';
     signal MemRead : std_logic := '0';	 
 		
@@ -34,7 +34,6 @@ architecture sim of Memory_tb is
 	Driver: process
 	begin
 		-- Initial write to address 0
-		wait for 20 ns;
 		address <= x"00000000";
 		dataIn <= x"11111111";
 		MemWrite <= '1';
