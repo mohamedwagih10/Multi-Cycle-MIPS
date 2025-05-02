@@ -6,6 +6,9 @@ use IEEE.numeric_std.all;
 entity Memory is 
 	port (
         clk: in std_logic;
+	-- We only have 256 address available so 8 bits would be enough
+        -- But we use 32 bit because we are dealing with other registers and gates
+        -- that works with 32-bit format.
         address : in std_logic_vector(31 downto 0);
         dataIn : in std_logic_vector(31 downto 0); -- Data to write [used only with "SW"]
 
